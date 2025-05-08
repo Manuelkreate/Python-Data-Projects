@@ -1,34 +1,23 @@
 import pandas as pd
+#Pandas data cleaning
+#Projet: Movie Review Tracker
 pd.set_option("display.precision", 2)
 
+#1. Initial data (with some issues for cleaning practice)
 data = {
-	"Title": ["Matrix", "Inception", "Up", "Joker", "Avengers", "Her"], 
-	"Genre": ["Action", "Action", "Comedy", "Drama", "Action", "Drama"],
-  "ViewerAge": [22, 30, 19, 25, 27, 21],
-  "Rating": [9, 8, 6, 9, 7, 8]
+ "Title": ["Matrix", "Inception", None, "Joker", "Avengers", "Her", "Inception"], 
+ "Genre": ["Action", "Action", "Comedy", "Drama", "Action", "Drama", "Action"],
+ "ViewerAge": [22, 30, 19, 25, None, 21, 30],
+ "Rating": [9, 8, 6, 9, 7, 8, 8]
 }
-print("DataFrame Created from the Data")
+
+#2. Create a DataFrame
 df=pd.DataFrame(data)
+
+#3. Initial Exploration
+print('Original DataFrame:')
 print(df)
-
-df["Liked"]=df["Rating"]>=7
-print("\n")
-print("A New Liked Column based on Rating (True if >=7)")
-print(df)
-
-print('\n')
-print("Number of Reviews Grouped by Genre")
-print(df.groupby("Genre")["Rating"].count())
-
-print('\n')
-print("Average Rating and Viewer Age Grouped by Genre")
-print(df.groupby("Genre")[["Rating", "ViewerAge"]].mean())
-
-print('\n')
-print("Movies with Rating < 7")
-print(df[df["Rating"]<7])
-
-df.rename(columns={"Rating": "Score"}, inplace=True)
-print("\n")
-print("Renaming Rating into Score")
-print(df)
+print('\nDataFrame Info:')
+print(df.info(data))
+print('\nMissing values per column (Original):')
+print(df.isnull().sum())
