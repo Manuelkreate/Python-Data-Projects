@@ -62,3 +62,19 @@ df.info()
 print('\nMissing values per column (cleaned)')
 print(df.isnull().sum())
 print(f'\nNumber of duplicate rows after cleaning: {df.duplicated().sum()}')
+
+#Addition of new liked column
+df['Liked']= df['Rating']>=7
+print('\nDataFrame plus new colum: ')
+print(df.head())
+
+#Grouping by genres and finding counts and averages
+print('\nNumber of Reviews per Genre')
+print(df.groupby('Genre')['Rating'].count())
+print('\nAverage Rating and ViewerAge per Genre')
+print(df.groupby('Genre')['Rating'].mean())
+print(df.groupby('Genre')['ViewerAge'].mean())
+
+#Displaying movies with low rating (<7)
+print('\nDisplay of Movies below Rating 7')
+print(df[df['Rating']<7][['Title', 'Genre', 'Rating']])
