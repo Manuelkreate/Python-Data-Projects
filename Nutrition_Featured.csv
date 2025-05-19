@@ -1,0 +1,8 @@
+Name,Calories,Category,IsHealthy,PerBite,CategoryCode
+Granola Bar,190,Snack,True,38.0,0
+Greek Yogurt,120,Dairy,True,24.0,1
+Avocado Toast,320,Breakfast,False,64.0,2
+Protein Shake,250,Drink,False,50.0,3
+Banana,105,Fruit,True,21.0,4
+Fruit Smoothie,180,Drink,True,36.0,3
+Veggie Wrap,230,Lunch,False,46.0,5
