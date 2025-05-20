@@ -1,0 +1,7 @@
+CustomerID,Name,Email,Region,TransactionAmount,Date,SingleTransaction
+101,Alice Smith,alice@example.com,North,200.5,2023-01-15,True
+102,Bob Jones,bob@example.com,South,150.0,2023-01-16,True
+103,Charlie Ray,charlie@example.com,West,300.75,2023-01-17,True
+104,Diana West,diana@example.com,East,,,False
+105,Ethan Lee,ethan@example.com,South,,,False
+106,Grace Kim,grace@example.com,North,,,False
